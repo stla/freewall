@@ -3,13 +3,14 @@
 #' <Add Description>
 #'
 #' @import htmlwidgets
+#' @importFrom jquerylib jquery_core
 #'
 #' @export
-freewall <- function(message, width = NULL, height = NULL, elementId = NULL) {
+freewall <- function(images, width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
-    message = message
+    images = images
   )
 
   # create widget
@@ -19,7 +20,10 @@ freewall <- function(message, width = NULL, height = NULL, elementId = NULL) {
     width = width,
     height = height,
     package = 'freewall',
-    elementId = elementId
+    elementId = elementId,
+    dependencies = list(
+      jquery_core(major_version = 3, minified = TRUE)
+    )
   )
 }
 
