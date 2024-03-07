@@ -35,3 +35,22 @@ in a variable}
 Output and render functions for using \code{freewall} within
   Shiny applications and interactive Rmd documents.
 }
+\examples{
+if(require(shiny) && interactive()) {
+library(shiny)
+library(freewall)
+
+ui <- fluidPage(
+  freewallOutput("fw")
+)
+
+server <- function(input, output, session) {
+  output$fw <- renderFreewall({
+    freewall(alphabet(), widths = 200, cellW = 200, cellH = "auto")
+  })
+}
+
+shinyApp(ui, server)
+}
+
+}

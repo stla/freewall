@@ -11,5 +11,6 @@ Imports:
     htmlwidgets,
     htmltools,
     jquerylib
+Suggests: shiny
 Encoding: UTF-8
 RoxygenNote: 7.3.1

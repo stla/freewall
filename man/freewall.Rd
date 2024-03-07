@@ -63,5 +63,7 @@ A \code{htmlwidget} object.
 Creates a grid of images.
 }
 \examples{
-freewall(alphabet(), widths = 200, draggable = TRUE)
+freewall(
+  alphabet(), widths = 200, cellW = 200, cellH = "auto", draggable = TRUE
+)
 }

@@ -5,7 +5,7 @@
 #' @export
 #'
 #' @examples
-#' freewall(alphabet(), widths = 200)
+#' freewall(alphabet(), widths = 200, cellW = 200, cellH = "auto")
 alphabet <- function() {
   Letters <-
     c(

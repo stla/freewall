@@ -27,7 +27,9 @@
 #' @importFrom htmltools htmlDependency validateCssUnit
 #'
 #' @examples
-#' freewall(alphabet(), widths = 200, draggable = TRUE)
+#' freewall(
+#'   alphabet(), widths = 200, cellW = 200, cellH = "auto", draggable = TRUE
+#' )
 freewall <- function(
     images,
     widths = 100,
@@ -113,6 +115,24 @@ freewall <- function(
 #'   in a Shiny UI definition, and \code{renderFreewall} returns a
 #'   \code{shiny.render.function} object that can be included in a Shiny server
 #'   definition.
+#'
+#' @examples
+#' if(require(shiny) && interactive()) {
+#' library(shiny)
+#' library(freewall)
+#'
+#' ui <- fluidPage(
+#'   freewallOutput("fw")
+#' )
+#'
+#' server <- function(input, output, session) {
+#'   output$fw <- renderFreewall({
+#'     freewall(alphabet(), widths = 200, cellW = 200, cellH = "auto")
+#'   })
+#' }
+#'
+#' shinyApp(ui, server)
+#' }
 #'
 #' @name freewall-shiny
 #'
