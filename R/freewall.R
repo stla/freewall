@@ -94,19 +94,25 @@ freewall <- function(
   )
 }
 
-#' Shiny bindings for freewall
+#' @title Shiny bindings for 'freewall'
 #'
-#' Output and render functions for using freewall within Shiny
-#' applications and interactive Rmd documents.
+#' @description Output and render functions for using \code{freewall} within
+#'   Shiny applications and interactive Rmd documents.
 #'
 #' @param outputId output variable to read from
-#' @param width,height Must be a valid CSS unit (like \code{'100\%'},
+#' @param width,height must be a valid CSS unit (like \code{'100\%'},
 #'   \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
-#'   string and have \code{'px'} appended.
-#' @param expr An expression that generates a freewall
-#' @param env The environment in which to evaluate \code{expr}.
-#' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
-#'   is useful if you want to save an expression in a variable.
+#'   string and have \code{'px'} appended
+#' @param expr an expression that generates a \code{\link{freewall}}
+#' @param env the environment in which to evaluate \code{expr}
+#' @param quoted logical, whether \code{expr} is a quoted expression
+#'   (with \code{quote()}); this is useful if you want to save an expression
+#'   in a variable
+#'
+#' @return \code{freewallOutput} returns an output element that can be included
+#'   in a Shiny UI definition, and \code{renderFreewall} returns a
+#'   \code{shiny.render.function} object that can be included in a Shiny server
+#'   definition.
 #'
 #' @name freewall-shiny
 #'
