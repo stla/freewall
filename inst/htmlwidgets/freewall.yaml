@@ -1,5 +1,5 @@
-dependencies:
- - name: freewall
-   version: 1.0.6
-   src: htmlwidgets/lib/freewall
-   script: freewall.js
+# dependencies:
+#  - name: freewall
+#    version: 1.0.6
+#    src: htmlwidgets/lib/freewall
+#    script: freewall.js

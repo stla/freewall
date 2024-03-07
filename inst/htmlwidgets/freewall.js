@@ -6,6 +6,7 @@ HTMLWidgets.widget({
   factory: function (el, width, height) {
 
     var $el = $(el);
+    $el.css("width", "unset");
 
     return {
       renderValue: function (x) {
@@ -15,7 +16,8 @@ HTMLWidgets.widget({
         var temp =
           "<div class='" +
           itemsClass +
-          "' style='width:{width}px;'><img src='{image}' width='100%'></div>";
+          "' style='width:{width}px;'>" +
+          "<img src='{image}' width='100%' style='display: block;'></div>";
         var html = "";
         for(var i = 0; i < images.length; ++i) {
           html += temp.replace(/\{width\}/g, 150).replace("{image}", images[i]);
@@ -29,7 +31,7 @@ HTMLWidgets.widget({
           animate: true,
           cellW: 150,
           cellH: "auto",
-          onResize: function () {
+          onResize: function() {
             wall.fitWidth();
           }
         });

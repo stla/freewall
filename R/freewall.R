@@ -4,6 +4,7 @@
 #'
 #' @import htmlwidgets
 #' @importFrom jquerylib jquery_core
+#' @importFrom htmltools htmlDependency
 #'
 #' @export
 freewall <- function(images, width = NULL, height = NULL, elementId = NULL) {
@@ -22,7 +23,14 @@ freewall <- function(images, width = NULL, height = NULL, elementId = NULL) {
     package = 'freewall',
     elementId = elementId,
     dependencies = list(
-      jquery_core(major_version = 3, minified = TRUE)
+      jquery_core(major_version = 3, minified = TRUE),
+      htmlDependency(
+        name = "freewall",
+        version = "1.0.6",
+        src = "htmlwidgets/lib/freewall",
+        script = "freewall.js",
+        package = "freewall"
+      )
     )
   )
 }
