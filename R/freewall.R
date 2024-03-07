@@ -7,11 +7,41 @@
 #' @importFrom htmltools htmlDependency
 #'
 #' @export
-freewall <- function(images, width = NULL, height = NULL, elementId = NULL) {
+freewall <- function(
+    images,
+    widths = 100,
+    draggable = FALSE,
+    animate = TRUE,
+    cellW = 100,
+    cellH = 100,
+    delay = 0,
+    fixSize = NULL,
+    gutterX = 10,
+    gutterY = 10,
+    keepOrder = TRUE,
+    rightToLeft = FALSE,
+    bottomToTop = FALSE,
+    elementId = NULL
+  ) {
 
+  if(length(widths) == 1L) {
+    widths <- rep(widths, length(images))
+  }
   # forward options using x
-  x = list(
-    images = images
+  x <- list(
+    images = images,
+    widths = widths,
+    draggable = draggable,
+    animate = animate,
+    cellW = cellW,
+    cellH = cellH,
+    delay = delay,
+    fixSize = fixSize,
+    gutterX = gutterX,
+    gutterY = gutterY,
+    keepOrder = keepOrder,
+    rightToLeft = rightToLeft,
+    bottomToTop = bottomToTop
   )
 
   # create widget
