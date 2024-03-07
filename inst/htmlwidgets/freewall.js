@@ -3,13 +3,14 @@ HTMLWidgets.widget({
 
   type: "output",
 
-  factory: function (el, width, height) {
+  factory: function(el, width, height) {
 
     var $el = $(el);
-    $el.css("width", "unset");
 
     return {
-      renderValue: function (x) {
+      renderValue: function(x) {
+
+        $el.css("width", x.width);
 
         var images = x.images;
         var widths = x.widths;
@@ -52,9 +53,10 @@ HTMLWidgets.widget({
         $images.find("img").on("load", function() {
           wall.fitWidth();
         });
+
       },
 
-      resize: function (width, height) {
+      resize: function(width, height) {
         // TODO: code to re-render the widget with a new size
       }
     };

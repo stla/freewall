@@ -3,6 +3,7 @@
 export(freewall)
 export(freewallOutput)
 export(renderFreewall)
-import(htmlwidgets)
 importFrom(htmltools,htmlDependency)
+importFrom(htmltools,validateCssUnit)
+importFrom(htmlwidgets,createWidget)
 importFrom(jquerylib,jquery_core)

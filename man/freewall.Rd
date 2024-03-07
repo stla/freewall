@@ -4,7 +4,23 @@
 \alias{freewall}
 \title{<Add Title>}
 \usage{
-freewall(images, width = NULL, height = NULL, elementId = NULL)
+freewall(
+  images,
+  widths = 100,
+  width = "100\%",
+  draggable = FALSE,
+  animate = TRUE,
+  cellW = 100,
+  cellH = 100,
+  delay = 0,
+  fixSize = NULL,
+  gutterX = 10,
+  gutterY = 10,
+  keepOrder = TRUE,
+  rightToLeft = FALSE,
+  bottomToTop = FALSE,
+  elementId = NULL
+)
 }
 \description{
 <Add Description>

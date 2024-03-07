@@ -2,14 +2,15 @@
 #'
 #' <Add Description>
 #'
-#' @import htmlwidgets
+#' @importFrom htmlwidgets createWidget
 #' @importFrom jquerylib jquery_core
-#' @importFrom htmltools htmlDependency
+#' @importFrom htmltools htmlDependency validateCssUnit
 #'
 #' @export
 freewall <- function(
     images,
     widths = 100,
+    width = "100%",
     draggable = FALSE,
     animate = TRUE,
     cellW = 100,
@@ -31,6 +32,7 @@ freewall <- function(
   x <- list(
     images = images,
     widths = widths,
+    width = validateCssUnit(width),
     draggable = draggable,
     animate = animate,
     cellW = cellW,
@@ -45,12 +47,12 @@ freewall <- function(
   )
 
   # create widget
-  htmlwidgets::createWidget(
-    name = 'freewall',
+  createWidget(
+    name = "freewall",
     x,
-    width = width,
-    height = height,
-    package = 'freewall',
+    width = NULL,
+    height = NULL,
+    package = "freewall",
     elementId = elementId,
     dependencies = list(
       jquery_core(major_version = 3, minified = TRUE),
