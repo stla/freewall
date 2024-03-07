@@ -6,7 +6,7 @@
 \alias{renderFreewall}
 \title{Shiny bindings for freewall}
 \usage{
-freewallOutput(outputId, width = "100\%", height = "400px")
+freewallOutput(outputId, width = "100\%", height = "auto")
 
 renderFreewall(expr, env = parent.frame(), quoted = FALSE)
 }

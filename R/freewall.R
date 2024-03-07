@@ -1,12 +1,33 @@
-#' <Add Title>
+#' The 'freewall' widget
+#' @description Creates a grid of images.
 #'
-#' <Add Description>
+#' @param images character vector of paths or urls to some images
+#' @param widths the widths of the images in pixels; if it is a single value,
+#'   this value will be used for all images
+#' @param width container width
+#' @param draggable Boolean, whether to enable draggability
+#' @param animate Boolean, whether to animate
+#' @param cellW width of unit, a number of pixels or \code{"auto"}
+#' @param cellH height of unit, a number of pixels or \code{"auto"}
+#' @param delay time delay for showing a block
+#' @param fixSize see \href{https://kombai.github.io/freewall/#options}{freewall options}
+#' @param gutterX space between columns, a number of pixels or \code{"auto"}
+#' @param gutterY space between rows, a number of pixels or \code{"auto"}
+#' @param keepOrder Boolean, whether to keep the order of the images
+#' @param rightToLeft Boolean, whether to let the layout start render from
+#'   right to left
+#' @param bottomToTop Boolean, whether to let the layout start render from
+#'   bottom to top
+#' @param elementId a HTML id for the container (usually useless)
 #'
+#' @return A \code{htmlwidget} object.
+#' @export
 #' @importFrom htmlwidgets createWidget
 #' @importFrom jquerylib jquery_core
 #' @importFrom htmltools htmlDependency validateCssUnit
 #'
-#' @export
+#' @examples
+#' freewall(alphabet(), widths = 200, draggable = TRUE)
 freewall <- function(
     images,
     widths = 100,
@@ -27,6 +48,13 @@ freewall <- function(
 
   if(length(widths) == 1L) {
     widths <- rep(widths, length(images))
+  } else {
+    if(length(widths) != length(images)) {
+      stop(
+        "The `widths` argument must be of length one or of the same length ",
+        "as the `images` vector."
+      )
+    }
   }
   # forward options using x
   x <- list(
@@ -45,7 +73,6 @@ freewall <- function(
     rightToLeft = rightToLeft,
     bottomToTop = bottomToTop
   )
-
   # create widget
   createWidget(
     name = "freewall",
@@ -84,13 +111,14 @@ freewall <- function(
 #' @name freewall-shiny
 #'
 #' @export
-freewallOutput <- function(outputId, width = '100%', height = '400px'){
-  htmlwidgets::shinyWidgetOutput(outputId, 'freewall', width, height, package = 'freewall')
+#' @importFrom htmlwidgets shinyWidgetOutput shinyRenderWidget
+freewallOutput <- function(outputId, width = "100%", height = "auto"){
+  shinyWidgetOutput(outputId, "freewall", width, height, package = "freewall")
 }
 
 #' @rdname freewall-shiny
 #' @export
 renderFreewall <- function(expr, env = parent.frame(), quoted = FALSE) {
-  if (!quoted) { expr <- substitute(expr) } # force quoted
-  htmlwidgets::shinyRenderWidget(expr, freewallOutput, env, quoted = TRUE)
+  if(!quoted) { expr <- substitute(expr) } # force quoted
+  shinyRenderWidget(expr, freewallOutput, env, quoted = TRUE)
 }

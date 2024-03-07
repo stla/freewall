@@ -1,0 +1,24 @@
+---
+title: "test freewall.js"
+author: "Stéphane Laurent"
+date: "2024-03-07"
+output: html_document
+---
+
+```{r, include=FALSE}
+library(freewall)
+```
+
+```{r, echo=FALSE}
+imagesFolder <- "images"
+imgs <- paste0(imagesFolder, "/", list.files(imagesFolder))
+freewall(
+  imgs, 
+  widths = 150,
+  width = "80%",
+  cellW = 150,
+  cellH = "auto",
+  draggable = TRUE
+)
+```
+

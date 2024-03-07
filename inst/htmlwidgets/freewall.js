@@ -10,7 +10,7 @@ HTMLWidgets.widget({
     return {
       renderValue: function(x) {
 
-        $el.css("width", x.width);
+        $el.css("width", x.width).css("margin", "auto");
 
         var images = x.images;
         var widths = x.widths;

@@ -2,7 +2,7 @@
 % Please edit documentation in R/freewall.R
 \name{freewall}
 \alias{freewall}
-\title{<Add Title>}
+\title{The 'freewall' widget}
 \usage{
 freewall(
   images,
@@ -22,6 +22,46 @@ freewall(
   elementId = NULL
 )
 }
+\arguments{
+\item{images}{character vector of paths or urls to some images}
+
+\item{widths}{the widths of the images in pixels; if it is a single value,
+this value will be used for all images}
+
+\item{width}{container width}
+
+\item{draggable}{Boolean, whether to enable draggability}
+
+\item{animate}{Boolean, whether to animate}
+
+\item{cellW}{width of unit, a number of pixels or \code{"auto"}}
+
+\item{cellH}{height of unit, a number of pixels or \code{"auto"}}
+
+\item{delay}{time delay for showing a block}
+
+\item{fixSize}{see \href{https://kombai.github.io/freewall/#options}{freewall options}}
+
+\item{gutterX}{space between columns, a number of pixels or \code{"auto"}}
+
+\item{gutterY}{space between rows, a number of pixels or \code{"auto"}}
+
+\item{keepOrder}{Boolean, whether to keep the order of the images}
+
+\item{rightToLeft}{Boolean, whether to let the layout start render from
+right to left}
+
+\item{bottomToTop}{Boolean, whether to let the layout start render from
+bottom to top}
+
+\item{elementId}{a HTML id for the container (usually useless)}
+}
+\value{
+A \code{htmlwidget} object.
+}
 \description{
-<Add Description>
+Creates a grid of images.
+}
+\examples{
+freewall(alphabet(), widths = 200, draggable = TRUE)
 }
