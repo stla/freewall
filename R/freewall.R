@@ -68,6 +68,12 @@ freewall <- function(
     }
   }
 
+  if(backgroundImages && is.null(heights)) {
+    stop(
+      "If `backgroundImages=TRUE`, the `heights` argument cannot be `NULL`."
+    )
+  }
+
   if(!is.null(heights)) {
     if(length(heights) == 1L) {
       heights <- rep(heights, length(images))
@@ -84,7 +90,9 @@ freewall <- function(
   # forward options using x
   x <- list(
     images = images,
+    display = ifelse(backgroundImages, "url", "img"),
     widths = widths,
+    heights = heights,
     width = validateCssUnit(width),
     draggable = draggable,
     animate = animate,

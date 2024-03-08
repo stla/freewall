@@ -2,14 +2,6 @@ library(shiny)
 library(freewall)
 
 css <- "
-			html {
-				height: 100%;
-			}
-
-			body {
-				height: 100%;
-			}
-
 			#fw {
 				margin: 15px;
 			}
@@ -55,7 +47,8 @@ ui <- fluidPage(
 server <- function(input, output, session) {
   output$fw <- renderFreewall({
     freewall(
-      nature(), widths = 200, cellW = 200, cellH = 200,
+      nature(), backgroundImages = TRUE,
+      widths = 200, cellW = 200, cellH = 200,
       animate = FALSE, delay = 50
     )
   })

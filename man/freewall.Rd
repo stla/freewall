@@ -6,7 +6,9 @@
 \usage{
 freewall(
   images,
+  backgroundImages = FALSE,
   widths = 100,
+  heights = NULL,
   width = "100\%",
   draggable = FALSE,
   animate = TRUE,
@@ -26,8 +28,16 @@ freewall(
 \item{images}{character vector of paths or urls to some images; for a
 Shiny app, the image files must be located in the www subfolder}
 
+\item{backgroundImages}{Boolean, whether to render the images with the
+CSS property \code{background-image} or with \code{img} elements}
+
 \item{widths}{the widths of the images in pixels; if a single value is given,
 it will be used for all images}
+
+\item{heights}{the heights of the images in pixels; if a single value is given,
+it will be used for all images; setting the heights is necessary if
+\code{backgroundImages=TRUE}, otherwise this argument can be set to
+\code{NULL}}
 
 \item{width}{the width of the container}
 
