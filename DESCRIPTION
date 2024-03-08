@@ -1,9 +1,13 @@
 Package: freewall
-Title: What the Package Does (One Line, Title Case)
+Title: A Wrapper of the JavaScript Library 'Freewall'
 Version: 0.0.0.9000
 Authors@R: 
-    person("Stéphane", "Laurent", , "laurent_step@outlook.fr", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    c(
+      person("Stéphane", "Laurent", , "laurent_step@outlook.fr", role = c("aut", "cre")),
+      person("Minh", "Nguyen", role = "cph", comment = "author of the JavaScript library 'Freewall'")
+    )
+Description: Creates dynamic grid layouts of images that can be included in 
+   'Shiny' applications and R markdown documents.
 License: GPL-3
 URL: https://github.com/stla/freewall
 BugReports: https://github.com/stla/freewall/issues
