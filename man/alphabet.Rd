@@ -13,5 +13,5 @@ A character vector of 24 urls pointing to an image.
 Twenty-four urls pointing to an image.
 }
 \examples{
-freewall(alphabet(), widths = 200)
+freewall(alphabet(), widths = 200, cellW = 200, cellH = "auto")
 }
