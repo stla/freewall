@@ -1,15 +1,16 @@
 #' The 'freewall' widget
 #' @description Creates a grid of images.
 #'
-#' @param images character vector of paths or urls to some images
-#' @param widths the widths of the images in pixels; if it is a single value,
-#'   this value will be used for all images
-#' @param width container width
+#' @param images character vector of paths or urls to some images; for a
+#'   Shiny app, the image files must be located in the www subfolder
+#' @param widths the widths of the images in pixels; if a single value is given,
+#'   it will be used for all images
+#' @param width the width of the container
 #' @param draggable Boolean, whether to enable draggability
 #' @param animate Boolean, whether to animate
 #' @param cellW width of unit, a number of pixels or \code{"auto"}
 #' @param cellH height of unit, a number of pixels or \code{"auto"}
-#' @param delay time delay for showing a block
+#' @param delay time delay for showing an item
 #' @param fixSize see \href{https://kombai.github.io/freewall/#options}{freewall options}
 #' @param gutterX space between columns, a number of pixels or \code{"auto"}
 #' @param gutterY space between rows, a number of pixels or \code{"auto"}
@@ -28,7 +29,7 @@
 #'
 #' @examples
 #' freewall(
-#'   alphabet(), widths = 200, cellW = 200, cellH = "auto", draggable = TRUE
+#'   nature(), widths = 200, cellW = 200, cellH = 200, draggable = TRUE
 #' )
 freewall <- function(
     images,

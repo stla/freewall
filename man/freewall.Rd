@@ -23,12 +23,13 @@ freewall(
 )
 }
 \arguments{
-\item{images}{character vector of paths or urls to some images}
+\item{images}{character vector of paths or urls to some images; for a
+Shiny app, the image files must be located in the www subfolder}
 
-\item{widths}{the widths of the images in pixels; if it is a single value,
-this value will be used for all images}
+\item{widths}{the widths of the images in pixels; if a single value is given,
+it will be used for all images}
 
-\item{width}{container width}
+\item{width}{the width of the container}
 
 \item{draggable}{Boolean, whether to enable draggability}
 
@@ -38,7 +39,7 @@ this value will be used for all images}
 
 \item{cellH}{height of unit, a number of pixels or \code{"auto"}}
 
-\item{delay}{time delay for showing a block}
+\item{delay}{time delay for showing an item}
 
 \item{fixSize}{see \href{https://kombai.github.io/freewall/#options}{freewall options}}
 
@@ -64,6 +65,6 @@ Creates a grid of images.
 }
 \examples{
 freewall(
-  alphabet(), widths = 200, cellW = 200, cellH = "auto", draggable = TRUE
+  nature(), widths = 200, cellW = 200, cellH = 200, draggable = TRUE
 )
 }

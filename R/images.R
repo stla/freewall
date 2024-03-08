@@ -51,7 +51,7 @@ alphabet <- function() {
 #'   nature(), widths = 200, cellW = 200, cellH = "200", draggable = TRUE
 #' )
 nature <- function() {
-  files <- paste0("nature-", 1L:9L)
+  files <- paste0("nature-", 1L:9L, ".jpg")
   paste0(
     "https://raw.githubusercontent.com/stla/freewall/main/inst/images/nature/",
     files
