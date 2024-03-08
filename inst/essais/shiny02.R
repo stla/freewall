@@ -48,7 +48,8 @@ server <- function(input, output, session) {
   output$fw <- renderFreewall({
     freewall(
       nature(), backgroundImages = TRUE,
-      widths = 200, cellW = 200, cellH = 200,
+      widths = 200, heights = 200,
+      cellW = 200, cellH = 200,
       animate = FALSE, delay = 50
     )
   })

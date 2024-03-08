@@ -15,7 +15,7 @@ HTMLWidgets.widget({
 
         var images = x.images;
         var widths = x.widths;
-        var heights = x.height;
+        var heights = x.heights;
         var itemsClass = el.id + "-item";
         var html = "";
         if(x.display === "url") {
