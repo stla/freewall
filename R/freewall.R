@@ -3,8 +3,14 @@
 #'
 #' @param images character vector of paths or urls to some images; for a
 #'   Shiny app, the image files must be located in the www subfolder
+#' @param backgroundImages Boolean, whether to render the images with the
+#'   CSS property \code{background-image} or with \code{img} elements
 #' @param widths the widths of the images in pixels; if a single value is given,
 #'   it will be used for all images
+#' @param heights the heights of the images in pixels; if a single value is given,
+#'   it will be used for all images; setting the heights is necessary if
+#'   \code{backgroundImages=TRUE}, otherwise this argument can be set to
+#'   \code{NULL}
 #' @param width the width of the container
 #' @param draggable Boolean, whether to enable draggability
 #' @param animate Boolean, whether to animate
@@ -33,7 +39,9 @@
 #' )
 freewall <- function(
     images,
+    backgroundImages = FALSE,
     widths = 100,
+    heights = NULL,
     width = "100%",
     draggable = FALSE,
     animate = TRUE,
@@ -59,6 +67,20 @@ freewall <- function(
       )
     }
   }
+
+  if(!is.null(heights)) {
+    if(length(heights) == 1L) {
+      heights <- rep(heights, length(images))
+    } else {
+      if(length(heights) != length(images)) {
+        stop(
+          "The `heights` argument must be of length one or of the same length ",
+          "as the `images` vector."
+        )
+      }
+    }
+  }
+
   # forward options using x
   x <- list(
     images = images,
@@ -103,9 +125,9 @@ freewall <- function(
 #'   Shiny applications and interactive Rmd documents.
 #'
 #' @param outputId output variable to read from
-#' @param width,height must be a valid CSS unit (like \code{'100\%'},
-#'   \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
-#'   string and have \code{'px'} appended
+#' @param width,height a valid CSS dimension (like \code{"100\%"},
+#'   \code{"400px"}, \code{"auto"}) or a number, which will be coerced to a
+#'   string and have \code{"px"} appended
 #' @param expr an expression that generates a \code{\link{freewall}}
 #' @param env the environment in which to evaluate \code{expr}
 #' @param quoted logical, whether \code{expr} is a quoted expression
