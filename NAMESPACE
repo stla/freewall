@@ -3,6 +3,7 @@
 export(alphabet)
 export(freewall)
 export(freewallOutput)
+export(nature)
 export(renderFreewall)
 importFrom(htmltools,htmlDependency)
 importFrom(htmltools,validateCssUnit)

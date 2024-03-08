@@ -39,3 +39,21 @@ alphabet <- function() {
     Letters
   )
 }
+
+#' Some images
+#' @description Nine urls pointing to an image.
+#'
+#' @return A character vector of nine urls pointing to an image.
+#' @export
+#'
+#' @examples
+#' freewall(
+#'   nature(), widths = 200, cellW = 200, cellH = "200", draggable = TRUE
+#' )
+nature <- function() {
+  files <- paste0("nature-", 1L:9L)
+  paste0(
+    "https://raw.githubusercontent.com/stla/freewall/main/inst/images/nature/",
+    files
+  )
+}
