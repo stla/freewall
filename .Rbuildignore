@@ -1,2 +1,4 @@
 ^freewall\.Rproj$
 ^\.Rproj\.user$
+^inst/essais$
+^inst/gif$

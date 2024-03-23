@@ -142,7 +142,7 @@ freewall <- function(
 #'   (with \code{quote()}); this is useful if you want to save an expression
 #'   in a variable
 #'
-#' @return \code{freewallOutput} returns an output element that can be included
+#' @returns \code{freewallOutput} returns an output element that can be included
 #'   in a Shiny UI definition, and \code{renderFreewall} returns a
 #'   \code{shiny.render.function} object that can be included in a Shiny server
 #'   definition.
