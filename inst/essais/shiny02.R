@@ -30,13 +30,13 @@ css <- "
 
 #fw .fw-item[data-state='start'] {
   display: block;
-  animation: start 0.5s;
-  -webkit-animation: start 0.5s;
+  animation: start 1s;
+  -webkit-animation: start 1s;
 }
 
 #fw .fw-item[data-state='move'] {
-  transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
-  -webkit-transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
+  transition: top 1s, left 1s, width 1s, height 1s;
+  -webkit-transition: top 1s, left 1s, width 1s, height 1s;
 }
 "
 
@@ -46,7 +46,7 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  output$fw <- renderFreewall({
+  output[["fw"]] <- renderFreewall({
     freewall(
       nature(), backgroundImages = TRUE,
       widths = 200, heights = 200,
@@ -57,4 +57,3 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
-
