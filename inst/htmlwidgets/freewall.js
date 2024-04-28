@@ -19,21 +19,21 @@ HTMLWidgets.widget({
         var itemsClass = el.id + "-item";
         var html = "";
         if(x.display === "url") {
+          var style =
+            "width: {w}px; height: {h}px; background-image: url({img});";
           var temp =
-            "<div class='" +
-            itemsClass +
-            "' style='width: {width}px; height: {height}px; background-image: url({image});'></div>";
+            "<div class='" + itemsClass +
+            "' style='" + style + "'></div>";
           for(var i = 0; i < images.length; ++i) {
             html += temp
-              .replace("{width}", widths[i])
-              .replace("{height}", heights[i])
-              .replace("{image}", images[i]);
+              .replace("{w}", widths[i])
+              .replace("{h}", heights[i])
+              .replace("{img}", images[i]);
           }
         } else {
           if(heights) {
             var temp =
-              "<div class='" +
-              itemsClass +
+              "<div class='" + itemsClass +
               "' style='width:{width}px; height: {height}px;'>" +
               "<img src='{image}' width='100%' " +
               "style='display: block; margin: 0;'></div>";
@@ -45,8 +45,7 @@ HTMLWidgets.widget({
             }
           } else {
             var temp =
-              "<div class='" +
-              itemsClass +
+              "<div class='" + itemsClass +
               "' style='width: {width}px;'>" +
               "<img src='{image}' width='100%' " +
               "style='display: block; margin: 0;'></div>";
