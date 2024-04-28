@@ -2,9 +2,10 @@ library(shiny)
 library(freewall)
 
 css <- "
-			#fw {
-				margin: 15px;
-			}
+#fw {
+	margin: 15px;
+}
+
 @keyframes start {
   from {
     transform: scale(0);
